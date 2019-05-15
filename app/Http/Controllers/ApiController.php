@@ -53,9 +53,6 @@ class ApiController extends Controller {
         if ($processHandler->isHeating())
             $processName = 'Нагрев';
 
-        if ($processHandler->isCooling())
-            $processName = 'Охлаждение';
-
         if ($processHandler->isStableState())
             $processName = 'Температурная пауза';
 

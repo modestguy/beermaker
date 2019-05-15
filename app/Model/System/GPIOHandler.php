@@ -17,6 +17,12 @@ class GPIOHandler {
    private $heatingElement;
 
     /**
+     * Насос
+     * @var
+     */
+   private $pumpElement;
+
+    /**
      * Температурный датчик
      * @var TemperatureSensor
      */
@@ -27,6 +33,11 @@ class GPIOHandler {
      * @var CoolingElement
      */
    private $coolingElement;
+
+   public function setPumpElement(PumpElement $pumpElement)
+   {
+       $this->pumpElement = $pumpElement;
+   }
 
    public function setTemperatureSensor(TemperatureSensor $temperatureSensor)
    {
@@ -50,6 +61,15 @@ class GPIOHandler {
    public function temperatureSensor() : TemperatureSensor
    {
        return $this->temperatureSensor;
+   }
+
+    /**
+     * Возвращает насос
+     * @return PumpElement
+     */
+   public function pumpElement() : PumpElement
+   {
+       return $this->pumpElement;
    }
 
     /**

@@ -43,7 +43,6 @@ class ProcessHandler {
     public function stopAllElements()
     {
         $this->gpioHandler->heatingElement()->stop();
-        $this->gpioHandler->coolingElement()->stop();
     }
 
     /**
@@ -130,7 +129,7 @@ class ProcessHandler {
      */
     public function isActiveProcess() : bool
     {
-        return $this->isCooling() || $this->isHeating()
+        return $this->isHeating()
             || $this->isStableState();
     }
 
