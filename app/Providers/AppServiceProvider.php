@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Model\System\Elements\CoolingElement;
 use App\Model\System\Elements\HeatingElement;
 use App\Model\System\Elements\TemperatureSensor;
 use App\Model\System\GPIOHandler;
