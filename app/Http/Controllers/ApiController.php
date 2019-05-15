@@ -18,6 +18,27 @@ class ApiController extends Controller {
         return compact('temperature');
     }
 
+    /**
+     * Активность насоса
+     * @return array
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     */
+    public function pumpActivity()
+    {
+        /** @var ProcessHandler $processHandler */
+        $processHandler = app()->make('process');
+        $active = $processHandler->getGPIOHandler()->pumpElement()->isActive();
+        return compact('active');
+    }
+
+    public function heatActivity()
+    {
+        /** @var ProcessHandler $processHandler */
+        $processHandler = app()->make('process');
+        $active = $processHandler->getGPIOHandler()->heatingElement()->isActive();
+        return compact('active');
+    }
+
     public function currentProcess()
     {
         /** @var ProcessHandler $processHandler */

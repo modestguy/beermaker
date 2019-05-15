@@ -19,6 +19,16 @@ Route::group(['middleware' => 'api'], function () {
         'uses' => 'ApiController@temperature'
     ]);
 
+    Route::group(['prefix' => 'activity'], function () {
+        Route::get('pump', [
+           'uses' => 'ApiController@pumpActivity'
+        ]);
+
+        Route::get('heat', [
+            'uses' => 'ApiController@heatActivity'
+        ]);
+    });
+
     Route::get('process', [
         'uses' => 'ApiController@currentProcess'
     ]);

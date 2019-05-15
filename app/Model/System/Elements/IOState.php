@@ -27,7 +27,7 @@ class IOState {
 
     public static function get(int $gpio) : bool
     {
-        $setting = Settings::byGpio($gpio)->get();
+        $setting = Settings::byGpio($gpio)->first();
         return $setting ? $setting->state : false;
     }
 
